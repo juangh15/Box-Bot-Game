@@ -1,93 +1,83 @@
 body {
-    background: rgb(221, 225, 235);
-}
-
-.navbar-brand img {
-    width: 60%;
-    max-width: 400px;
+  background: rgb(221, 225, 235);
 }
 
 /*Ocultar bordes*/
+
 .border-primary {
-  /**/border-color: rgba(0, 0, 0, 0) !important;
+  /**/
+  border-color: rgba(0, 0, 0, 0) !important;
 }
 
-/*Preload images
-
-#preload-03 { background: url(http://domain.tld/image-03.png) no-repeat -9999px -9999px; }
-
-*/
-.link-logo-content{
-  background: url(../svgs/logo.svg) !important; 
-}
+/*Elementos del juego*/
 
 .gamePlaceBox {
-  border-color:red;
-  border-width:4px !important; 
+  border-color: red;
+  border-width: 4px !important;
 }
 
-.gameWall { 
-  background: url(../svgs/wall.svg) !important; 
+.gameWall {
+  background: url(../svgs/wall.svg) !important;
 }
 
-.gameBox { 
-  background: url(../svgs/box.svg) !important; 
+.gameBox {
+  background: url(../svgs/box.svg) !important;
 }
 
-.playerDown { 
-  background: url(../svgs/abajo.svg) !important; 
+.playerDown {
+  background: url(../svgs/abajo.svg) !important;
 }
 
-.playerUp { 
-  background: url(../svgs/arriba.svg) !important; 
+.playerUp {
+  background: url(../svgs/arriba.svg) !important;
 }
 
-.playerLeft { 
-  background: url(../svgs/lado.svg) !important; 
+.playerLeft {
+  background: url(../svgs/lado.svg) !important;
 }
 
-.playerRight { 
-  background: url(../svgs/lado.svg)  !important; 
+.playerRight {
+  background: url(../svgs/lado.svg) !important;
   transform: scaleX(-1);
 }
 
-
 /*Botones flecha*/
-.square{
-    fill: rgb(2, 138, 43);
+
+.square {
+  fill: rgb(2, 138, 43);
 }
 
-.svgbutton:active .square{
-    fill: rgb(58, 250, 116);
+.svgbutton:active .square {
+  fill: rgb(58, 250, 116);
 }
 
-.center{
-    fill:rgb(255, 255, 255);
+.center {
+  fill: rgb(255, 255, 255);
 }
 
 /*Tablas*/
 
 table {
-    width: 100%;
-    table-layout: auto;
-  }
+  width: 100%;
+  table-layout: auto;
+}
 
-  td {
-    width: 33.33%;
-    position: relative;
-    width: 60px;
-  }
-  td:after {
-    content: '';
-    display: block;
-    margin-top: 100%;
-    
-  }
-  td .cell-content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-  }
+td {
+  width: 33.33%;
+  position: relative;
+  width: 60px;
+}
+
+td:after {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+
+td .cell-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
