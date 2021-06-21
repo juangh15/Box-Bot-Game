@@ -10,3 +10,6 @@ Juego basado en Sokoban, para navegadores compatibles con Javascript.
 
 ![Alt text](/screenshots/sc4.PNG?raw=true "Screenshot4")
 
+# Instrucciones
+1. Abrir /box/box.html con un navegador que soporte Javascript.
+2. Seguir las instrucciones del juego.
