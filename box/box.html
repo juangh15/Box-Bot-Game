@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS Online-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- CUSTOM CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Contenedor gameBOX -->
+    <div class="container p-4">
+        <div class="row justify-content-md-center">
+            <div class="col-md-4" text-align: center;>
+                <h2>Box-Bot</h2>
+                <h5 id="instruc1">Intrucciones: </h5>
+                <h6 id="instruc2">Utiliza las flechas verdes para mover a Box-Bot y empujar las cajas.<br>Debes acomodar
+                    todas las cajas en los lugares indicados con rojo, sin importar el orden en que se haga.</h6>
+                <strong id="actualLevel" style="margin-right:25%;"></strong>
+                <button class="btn btn-danger m-1" id="restartLevel" onclick="gameActual.reset()" hidden>Reiniciar
+                    nivel</button>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <table class="table table-bordered border-primary">
+                    <tbody id="gameBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <table class="table table-bordered border-primary" style="margin:0 auto; width:50%;" id="gameControls"
+                    hidden>
+                    <tbody>
+                        <tr>
+                            <td class="cell" id="cell0" onclick="">
+                                <div id="cell-content-0" class="cell-content"></div>
+                            </td>
+                            <td class="cell" id="cell1" onclick="">
+                                <div id="cell-content-1" class="cell-content">
+                                    <svg class="svgbutton" version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                        height="100%" viewBox="0 0 180.000000 180.000000"
+                                        preserveAspectRatio="xMidYMid meet" onclick="gameActual.press('up')">
+
+                                        <g class="gamebutton square"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M362 1629 c-69 -34 -104 -71 -138 -144 l-24 -50 0 -496 0 -496 31
+    -61 c34 -69 71 -104 144 -138 l50 -24 495 0 495 0 50 24 c73 34 110 69 144
+    138 l31 61 0 496 0 496 -24 50 c-34 73 -69 110 -138 144 l-61 31 -497 0 -497
+    0 -61 -31z" />
+                                        </g>
+                                        <g class="gamebutton center"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            fill="#FFFFFF" stroke="none">
+                                            <path d="M728 1089 l-188 -131 0 -139 c0 -76 2 -139 5 -139 3 0 86 61 184 136
+    120 91 184 134 193 128 11 -7 320 -230 356 -257 9 -7 12 20 12 131 l0 141
+    -182 128 c-100 70 -185 129 -188 130 -3 1 -89 -57 -192 -128z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </td>
+                            <td class="cell" id="cell2" onclick="">
+                                <div id="cell-content-2" class="cell-content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cell" id="cell3" onclick="">
+                                <div id="cell-content-3" class="cell-content">
+                                    <svg class="svgbutton" version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                        height="100%" viewBox="0 0 180.000000 180.000000"
+                                        preserveAspectRatio="xMidYMid meet" onclick="gameActual.press('left')"
+                                        transform="rotate(270)">
+
+                                        <g class="gamebutton square"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M362 1629 c-69 -34 -104 -71 -138 -144 l-24 -50 0 -496 0 -496 31
+    -61 c34 -69 71 -104 144 -138 l50 -24 495 0 495 0 50 24 c73 34 110 69 144
+    138 l31 61 0 496 0 496 -24 50 c-34 73 -69 110 -138 144 l-61 31 -497 0 -497
+    0 -61 -31z" />
+                                        </g>
+                                        <g class="gamebutton center"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            fill="#FFFFFF" stroke="none">
+                                            <path d="M728 1089 l-188 -131 0 -139 c0 -76 2 -139 5 -139 3 0 86 61 184 136
+    120 91 184 134 193 128 11 -7 320 -230 356 -257 9 -7 12 20 12 131 l0 141
+    -182 128 c-100 70 -185 129 -188 130 -3 1 -89 -57 -192 -128z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </td>
+                            <td class="cell" id="cell4" onclick="">
+                                <div id="cell-content-4" class="cell-content"></div>
+                            </td>
+                            <td class="cell" id="cell5" onclick="">
+                                <div id="cell-content-5" class="cell-content">
+                                    <svg class="svgbutton" version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                        height="100%" viewBox="0 0 180.000000 180.000000"
+                                        preserveAspectRatio="xMidYMid meet" onclick="gameActual.press('right')"
+                                        transform="rotate(90)">
+
+                                        <g class="gamebutton square"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M362 1629 c-69 -34 -104 -71 -138 -144 l-24 -50 0 -496 0 -496 31
+    -61 c34 -69 71 -104 144 -138 l50 -24 495 0 495 0 50 24 c73 34 110 69 144
+    138 l31 61 0 496 0 496 -24 50 c-34 73 -69 110 -138 144 l-61 31 -497 0 -497
+    0 -61 -31z" />
+                                        </g>
+                                        <g class="gamebutton center"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            fill="#FFFFFF" stroke="none">
+                                            <path d="M728 1089 l-188 -131 0 -139 c0 -76 2 -139 5 -139 3 0 86 61 184 136
+    120 91 184 134 193 128 11 -7 320 -230 356 -257 9 -7 12 20 12 131 l0 141
+    -182 128 c-100 70 -185 129 -188 130 -3 1 -89 -57 -192 -128z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cell" id="cell6" onclick="">
+                                <div id="cell-content-6" class="cell-content"></div>
+                            </td>
+                            <td class="cell" id="cell7" onclick="">
+                                <div id="cell-content-7" class="cell-content">
+                                    <svg class="svgbutton" version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%"
+                                        height="100%" viewBox="0 0 180.000000 180.000000"
+                                        preserveAspectRatio="xMidYMid meet" onclick="gameActual.press('down')"
+                                        transform="rotate(180)">
+
+                                        <g class="gamebutton square"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M362 1629 c-69 -34 -104 -71 -138 -144 l-24 -50 0 -496 0 -496 31
+    -61 c34 -69 71 -104 144 -138 l50 -24 495 0 495 0 50 24 c73 34 110 69 144
+    138 l31 61 0 496 0 496 -24 50 c-34 73 -69 110 -138 144 l-61 31 -497 0 -497
+    0 -61 -31z" />
+                                        </g>
+                                        <g class="gamebutton center"
+                                            transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                                            fill="#FFFFFF" stroke="none">
+                                            <path d="M728 1089 l-188 -131 0 -139 c0 -76 2 -139 5 -139 3 0 86 61 184 136
+    120 91 184 134 193 128 11 -7 320 -230 356 -257 9 -7 12 20 12 131 l0 141
+    -182 128 c-100 70 -185 129 -188 130 -3 1 -89 -57 -192 -128z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </td>
+                            <td class="cell" id="cell8" onclick="">
+                                <div id="cell-content-8" class="cell-content"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: center;">
+                    <button class="btn btn-primary m-2" id="nextLevel" onclick="gameActual.nextLevel()" hidden>Siguiente
+                        Nivel</button>
+                    <div class="card results text-center" id="results" hidden>
+                        <div class="card-header bg-dark">
+                            <h6 class="card-title text-white" id="result"></h6>
+                        </div>
+                        <div class="card-body">
+                            <p id="scorePlayer"></p>
+                        </div>
+
+                    </div>
+                    <br>
+                    <button style="margin:0 auto;" class="btn btn-success" id="restart" onclick="restart()">Nuevo
+                        Juego</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Contenedor gameBOX-->
+    <footer>
+        <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+        <!--Custom JS-->
+        <script src="script/box.js"></script>
+    </footer>
+</body>
+
+</html>
